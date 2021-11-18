@@ -6,12 +6,9 @@ jobs:
   ubuntu:
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - {tag: "bionic"}
-          - {tag: "focal"}
-          - {tag: "groovy"}
-          - {tag: "hirsute"}
+    env:
+      GHA_EXTERNAL_DISK: "perf-tool-ci"
+      GHA_PREEMPTIBLE: "false"
     container: ubuntu:bionic
     runs-on: [self-hosted, Linux, X64]
     steps:
