@@ -26,6 +26,7 @@ jobs:
         ./litex_setup.py --init --install
         pip3 install meson
         ./litex_setup.py --gcc=riscv
+        export PATH=$(pwd)/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH
         python3 litex-boards/litex_boards/targets/digilent_arty.py --build
     - uses: actions/upload-artifact@v2
       with:
