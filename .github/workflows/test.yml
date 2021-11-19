@@ -16,6 +16,8 @@ jobs:
     - run: printenv
     - run: df -h
     - run: mount
+    - run: ls /mnt/aux/home
+    - run: ls /mnt/aux/opt
     - uses: actions/upload-artifact@v2
       with:
         path: |
