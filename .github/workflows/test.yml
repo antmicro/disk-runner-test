@@ -14,7 +14,8 @@ jobs:
     steps:
     - run: hostname
     - run: printenv
-    - run: df -h .
+    - run: df -h
+    - run: mount
     - uses: actions/upload-artifact@v2
       with:
         path: |
