@@ -15,9 +15,9 @@ jobs:
     - run: hostname
     - run: printenv
     - run: |
-      ls -la /mnt/aux/opt/Xilinx/Vivado/
-      source /mnt/aux/opt/Xilinx/Vivado/2019.2/settings64.sh
-      vivado -version
+        ls -la /mnt/aux/opt/Xilinx/Vivado/
+        source /mnt/aux/opt/Xilinx/Vivado/2019.2/settings64.sh
+        vivado -version
     - uses: actions/upload-artifact@v2
       with:
         path: |
