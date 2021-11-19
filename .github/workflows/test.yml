@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
     env:
-      GHA_EXTERNAL_DISK: "disk-test-image"
+      GHA_EXTERNAL_DISK: "perf-tool-ci"
       GHA_PREEMPTIBLE: "false"
     container: ubuntu:bionic
     runs-on: [self-hosted, Linux, X64]
