@@ -16,8 +16,7 @@ jobs:
     - run: printenv
     - run: df -h
     - run: mount
-    - run: ls -la /mnt/aux/opt/
-    - run: ls -la /mnt/aux/opt/Xilinx
+    - run: ls -la /mnt/aux/opt/Xilinx/Vivado/
     - uses: actions/upload-artifact@v2
       with:
         path: |
