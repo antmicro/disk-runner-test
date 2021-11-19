@@ -15,10 +15,18 @@ jobs:
     - run: hostname
     - run: printenv
     - run: |
+        apt update
+        apt install wget python3 python3-pip
         ls -la /mnt/aux/opt/Xilinx/Vivado/
         ln -s /mnt/aux/opt/Xilinx /opt/Xilinx
         source /opt/Xilinx/Vivado/2019.2/settings64.sh
         vivado -version
+        wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
+        chmod +x litex_setup.py
+        ./litex_setup.py --init --install
+        pip3 install meson
+        ./litex_setup.py --gcc=riscv
+        python3 litex-boards/litex_boards/targts/digilent_arty.py --build
     - uses: actions/upload-artifact@v2
       with:
         path: |
